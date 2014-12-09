@@ -1,0 +1,3 @@
+alias gitx='gitx --all'
+
+alias grup='git remote update'
