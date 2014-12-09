@@ -85,6 +85,7 @@ nnoremap <leader>hs :set hls!<CR>
 
 " statusline:
 set laststatus=2
+set noswapfile
 
 " cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " format markers:
