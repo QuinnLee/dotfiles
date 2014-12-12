@@ -52,6 +52,7 @@ set wrap
 set number
 set history=1000
 set backspace=indent,eol,start
+set nopaste
 
 autocmd FileChangedShell * echo "File changed, press F9 to reload."
 
