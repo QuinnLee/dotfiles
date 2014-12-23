@@ -56,13 +56,6 @@ set nopaste
 
 autocmd FileChangedShell * echo "File changed, press F9 to reload."
 
-autocmd CursorHold * call Timer()
-function! Timer()
-    call feedkeys("f\e")
-    checktime
-endfunction
-set updatetime=1000  " milliseconds
-
 autocmd CursorHoldI * call TimerI()
 function! TimerI()
     call feedkeys("\<C-R>\e")
