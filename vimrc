@@ -9,6 +9,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " plugins
+Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
@@ -29,6 +30,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'sentientmachine/Pretty-Vim-Python'
 nnoremap <F5> :GundoToggle<CR>
 
 Bundle 'duskhacker/sweet-rspec-vim'
@@ -42,6 +44,7 @@ map <Leader>x :set filetype=xml<CR>
   \:source $VIMRUNTIME/syntax/syntax.vim<CR>
 
 Bundle 'heartsentwined/vim-emblem'
+Bundle "wookiehangover/jshint.vim"
 
 " ---------------------------
 " config
@@ -53,6 +56,8 @@ set number
 set history=1000
 set backspace=indent,eol,start
 set nopaste
+set ttyfast
+set lazyredraw
 
 autocmd FileChangedShell * echo "File changed, press F9 to reload."
 
@@ -71,15 +76,24 @@ set tabstop=2
 
 " themes / colors
 set term=xterm-256color
+if !has("gui_running")
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+endif
+
 set background=dark
+colorscheme solarized
+
+set numberwidth=3
+
+hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
 
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
-
-set cursorline
 
 nnoremap <leader>sc :set spell!<CR>
 nnoremap <leader>hs :set hls!<CR>
@@ -141,6 +155,7 @@ set complete=.,w,t
 " File types
 
 au BufRead,BufNewFile Vagrantfile,Berksfile,Gemfile,Hanfile setfiletype ruby
+au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
 
 " Key Bindings
 map <Leader>n :NERDTreeToggle<CR>
