@@ -5,6 +5,17 @@ plugins=(git osx rails ruby rbenv python)
 
 # Assure that the .rbenv -related have higher precedence (i.e. when using tmux)
 # then de-dup PATH variable.
+export PYENV_ROOT="$HOME/.pyenv"
+# Add pyenv root to PATH
+# and initialize pyenv
+if [[ -d $PYENV_ROOT ]];then
+    PATH="$PYENV_ROOT/bin:$PATH"
+    # initialize pyenv
+    eval "$(pyenv init -)"
+    # initialize pyenv virtualenv
+    eval "$(pyenv virtualenv-init -)"
+fi
+
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
@@ -12,8 +23,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
 autoload -U compinit
 compinit
-
-eval "$(rbenv init -)"
 
 # use vim as an editor
 export EDITOR=vim
