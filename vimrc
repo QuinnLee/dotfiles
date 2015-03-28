@@ -153,7 +153,6 @@ set complete=.,w,t
 
 " ----------------------------
 " File types
-
 au BufRead,BufNewFile Vagrantfile,Berksfile,Gemfile,Hanfile setfiletype ruby
 au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
 
