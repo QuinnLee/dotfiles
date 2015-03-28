@@ -10,6 +10,7 @@ Bundle 'gmarik/vundle'
 
 " plugins
 Bundle 'digitaltoad/vim-jade'
+Bundle 'jeetsukumaran/vim-buffergator'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
@@ -22,7 +23,6 @@ Bundle 'tpope/vim-haml'
 Bundle 'mileszs/ack.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'pangloss/vim-javascript'
 Bundle 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
 
@@ -44,7 +44,6 @@ map <Leader>x :set filetype=xml<CR>
   \:source $VIMRUNTIME/syntax/syntax.vim<CR>
 
 Bundle 'heartsentwined/vim-emblem'
-Bundle "wookiehangover/jshint.vim"
 
 " ---------------------------
 " config
@@ -57,7 +56,12 @@ set history=1000
 set backspace=indent,eol,start
 set nopaste
 set ttyfast
-set lazyredraw
+
+" set cursor to middle of screen
+set so=999
+
+" yank to clipboard
+map <Leader>y :w !pbcopy<CR><CR>
 
 autocmd FileChangedShell * echo "File changed, press F9 to reload."
 
@@ -74,6 +78,11 @@ set smarttab
 set shiftwidth=2
 set tabstop=2
 
+set timeout timeoutlen=1000 ttimeoutlen=100
+
+" map esc to jk
+imap jk <esc>
+"
 " themes / colors
 set term=xterm-256color
 if !has("gui_running")
@@ -88,6 +97,14 @@ set numberwidth=3
 
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
+" Ignore files
+"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.ds_store,*/vendor,*/public,*/node_modules,*/bower_components
+
+"Control P ignore files
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|bower_components\|node_modules\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
 
 "folding settings
 set foldmethod=indent   "fold based on indent
