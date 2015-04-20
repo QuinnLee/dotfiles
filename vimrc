@@ -25,7 +25,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
-
 Bundle 'groenewege/vim-less'
 Bundle 'nono/vim-handlebars'
 Bundle 'sjl/gundo.vim'
@@ -56,6 +55,8 @@ set history=1000
 set backspace=indent,eol,start
 set nopaste
 set ttyfast
+
+let g:NERDTreeWinSize=20
 
 " set cursor to middle of screen
 set so=999
