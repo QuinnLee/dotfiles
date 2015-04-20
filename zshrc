@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="muse"
 source $ZSH/oh-my-zsh.sh
-plugins=(git osx rails ruby rbenv python)
+plugins=(git osx rails ruby rbenv python brew npm pip vi-mode vagrant)
 
 # Assure that the .rbenv -related have higher precedence (i.e. when using tmux)
 # then de-dup PATH variable.
