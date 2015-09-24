@@ -30,6 +30,7 @@ Bundle 'nono/vim-handlebars'
 Bundle 'sjl/gundo.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'sentientmachine/Pretty-Vim-Python'
+Bundle 'pangloss/vim-javascript'
 nnoremap <F5> :GundoToggle<CR>
 
 Bundle 'duskhacker/sweet-rspec-vim'
@@ -63,6 +64,7 @@ set so=999
 
 " yank to clipboard
 map <Leader>y :w !pbcopy<CR><CR>
+
 
 autocmd FileChangedShell * echo "File changed, press F9 to reload."
 
@@ -137,7 +139,7 @@ set noswapfile
 "   %P percentage through buffer
 "   %) end of width specification
 set statusline=%{fugitive#statusline()}
-set statusline+=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set statusline=%<%F\ %h%m%r%y%=%-14.(%l,%c%V%)\ %P
 
 " ---------------------------
 " Backup

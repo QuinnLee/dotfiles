@@ -38,3 +38,5 @@ local = yellow
 remote = green
 [color]
 ui = auto
+[merge]
+	tool = meld

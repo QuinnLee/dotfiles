@@ -1,3 +1,5 @@
 alias gitx='gitx --all'
 
 alias grup='git remote update'
+
+alias pyserve='python -m SimpleHTTPServer 8080'
