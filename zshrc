@@ -17,6 +17,8 @@ if [[ -d $PYENV_ROOT ]];then
 fi
 
 eval "$(rbenv init -)"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
