@@ -8,6 +8,8 @@ call vundle#rc()
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
+Bundle 'rizzatti/dash.vim'
+
 " plugins
 Bundle 'digitaltoad/vim-jade'
 Bundle 'jeetsukumaran/vim-buffergator'
