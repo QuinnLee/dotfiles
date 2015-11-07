@@ -6,46 +6,49 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'rizzatti/dash.vim'
 
 " plugins
-Bundle 'digitaltoad/vim-jade'
-Bundle 'jeetsukumaran/vim-buffergator'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-cucumber'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-haml'
-Bundle 'mileszs/ack.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'elzr/vim-json'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'rizzatti/dash.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-cucumber'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-haml'
+Plugin 'mileszs/ack.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'elzr/vim-json'
+Plugin 'groenewege/vim-less'
+Plugin 'nono/vim-handlebars'
+Plugin 'sjl/gundo.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'sentientmachine/Pretty-Vim-Python'
+Plugin 'pangloss/vim-javascript'
+Plugin 'duskhacker/sweet-rspec-vim'
+Plugin 'heartsentwined/vim-emblem'
+Plugin 'sukima/xmledit'
+Plugin 'isRuslan/vim-es6'
+
 let g:vim_json_syntax_conceal = 0
-Bundle 'groenewege/vim-less'
-Bundle 'nono/vim-handlebars'
-Bundle 'sjl/gundo.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'sentientmachine/Pretty-Vim-Python'
-Bundle 'pangloss/vim-javascript'
 nnoremap <F5> :GundoToggle<CR>
 
-Bundle 'duskhacker/sweet-rspec-vim'
 map <leader>R :SweetVimRspecRunFile<CR>
 map <leader>r :SweetVimRspecRunFocused<CR>
 
-Bundle 'sukima/xmledit'
 map <Leader>x :set filetype=xml<CR>
   \:source $VIMRUNTIME/syntax/xml.vim<CR>
   \:set foldmethod=syntax<CR>
   \:source $VIMRUNTIME/syntax/syntax.vim<CR>
 
-Bundle 'heartsentwined/vim-emblem'
 
 " ---------------------------
 " config
