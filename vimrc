@@ -68,6 +68,7 @@ let g:NERDTreeWinSize=20
 set so=999
 
 " yank to clipboard
+set clipboard=unnamedplus
 map <Leader>y :w !pbcopy<CR><CR>
 
 
@@ -183,4 +184,7 @@ au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
 
 " Key Bindings
 map <Leader>n :NERDTreeToggle<CR>
+
+noremap p "0p
+noremap P "0P
 
