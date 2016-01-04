@@ -8,8 +8,6 @@ call vundle#rc()
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-
-" plugins
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'rizzatti/dash.vim'
 Plugin 'digitaltoad/vim-jade'
@@ -68,7 +66,6 @@ let g:NERDTreeWinSize=20
 set so=999
 
 " yank to clipboard
-set clipboard=unnamedplus
 map <Leader>y :w !pbcopy<CR><CR>
 
 
@@ -172,6 +169,12 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
+" Spell check for md files
+set spelllang=en_us
+autocmd FileType mail setlocal spell
+autocmd BufRead COMMIT_EDITMSG setlocal spell
+autocmd BufNewFile,BufRead *.md,*.mkd,*.markdown setlocal spell
+
 " ----------------------------
 " Tab completion
 set wildmode=list:longest,list:full
@@ -185,6 +188,6 @@ au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
 " Key Bindings
 map <Leader>n :NERDTreeToggle<CR>
 
-noremap p "0p
 noremap P "0P
+
 

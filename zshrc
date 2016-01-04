@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="muse"
 source $ZSH/oh-my-zsh.sh
-plugins=(git osx rails ruby rbenv python brew npm pip vi-mode vagrant)
+plugins=(git osx rails ruby rbenv python brew npm pip vi-mode vagrant python3)
 
 # Assure that the .rbenv -related have higher precedence (i.e. when using tmux)
 # then de-dup PATH variable.
@@ -20,6 +20,7 @@ eval "$(rbenv init -)"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 export PATH="$HOME/.rbenv/bin:$PATH"
+
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
@@ -74,3 +75,6 @@ setopt HIST_VERIFY
 setopt EXTENDED_HISTORY
 
 set -o vi
+# prompt
+PROMPT='%{$fg_bold[red]%}➜ %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+
