@@ -1,0 +1,26 @@
+#!/bin/sh
+
+brew bundle --file=- <<EOF
+brew "mongodb"
+brew "phantomjs"
+brew "qt5"
+brew "rbenv-default-gems"
+brew "watchman"
+cask "firefox"
+cask "google-chrome"
+cask "google-hangouts"
+cask "iterm2"
+cask "rowanj-gitx"
+cask "screenhero"
+cask "slack"
+cask "sublime-text3"
+EOF
+
+if [ ! -f "$HOME/.gemrc" ]; then
+  echo "gem: --no-document" > "$HOME/.gemrc"
+fi
+
+if [ ! -f "$HOME/.rbenv/default-gems" ]; then
+  echo "bundler" > "$HOME/.rbenv/default-gems"
+fi
+
