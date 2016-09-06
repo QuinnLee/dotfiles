@@ -2,8 +2,8 @@ set nocompatible               " be iMproved
 filetype off                   " required!
 
 " ---------------------------
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
@@ -172,5 +172,6 @@ au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
 map <Leader>n :NERDTreeToggle<CR>
 
 noremap P "0P
+call vundle#end()
 
 
