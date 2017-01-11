@@ -3,7 +3,8 @@ filetype off                   " required!
 
 " ---------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+
+call vundle#begin('~/.vim/bundle')
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
@@ -19,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-haml'
 Plugin 'mileszs/ack.vim'
@@ -28,13 +30,14 @@ Plugin 'elzr/vim-json'
 Plugin 'groenewege/vim-less'
 Plugin 'nono/vim-handlebars'
 Plugin 'sjl/gundo.vim'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'pangloss/vim-javascript'
 Plugin 'duskhacker/sweet-rspec-vim'
 Plugin 'heartsentwined/vim-emblem'
 Plugin 'sukima/xmledit'
 Plugin 'isRuslan/vim-es6'
+
+call vundle#end()
 
 let g:vim_json_syntax_conceal = 0
 nnoremap <F5> :GundoToggle<CR>
@@ -86,8 +89,11 @@ set tabstop=2
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 " map esc to jk
-imap jk <esc>
-"
+inoremap jj <ESC>
+inoremap jk <ESC>
+imap jk <ESC>
+imap kj <ESC>
+
 " themes / colors
 set term=xterm-256color
 if !has("gui_running")
@@ -172,6 +178,5 @@ au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
 map <Leader>n :NERDTreeToggle<CR>
 
 noremap P "0P
-call vundle#end()
 
 

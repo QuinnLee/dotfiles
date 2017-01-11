@@ -1,7 +1,6 @@
 #!/bin/sh
 
 brew bundle --file=- <<EOF
-brew "mongodb"
 brew "phantomjs"
 brew "qt5"
 brew "rbenv-default-gems"
@@ -24,3 +23,4 @@ if [ ! -f "$HOME/.rbenv/default-gems" ]; then
   echo "bundler" > "$HOME/.rbenv/default-gems"
 fi
 
+curl -fsS https://raw.githubusercontent.com/grantovich/homebrew-notifier/master/install.sh | sh

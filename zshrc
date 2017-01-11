@@ -54,7 +54,7 @@ setopt autopushd pushdminus pushdsilent pushdtohome
 setopt cdablevars
 
 # Try to correct command line spelling
-setopt correct correct_all
+setopt correct
 
 # Enable extended globbing
 setopt extended_glob

@@ -1,5 +1,7 @@
 alias gitx='gitx --all'
 
+alias vi='vim'
+
 alias grup='git remote update'
 
 alias pyserve='python -m SimpleHTTPServer 8080'
