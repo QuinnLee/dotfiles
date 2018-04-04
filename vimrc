@@ -36,6 +36,10 @@ Plugin 'duskhacker/sweet-rspec-vim'
 Plugin 'heartsentwined/vim-emblem'
 Plugin 'sukima/xmledit'
 Plugin 'isRuslan/vim-es6'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'maxmellon/vim-jsx-pretty'
+
+call vundle#end()
 
 call vundle#end()
 
@@ -109,11 +113,11 @@ set numberwidth=3
 hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 " Ignore files
-"set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.ds_store,*/vendor,*/public,*/node_modules,*/bower_components
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.ds_store,*/vendor,*/public,*/node_modules,*/bower_components
 
 "Control P ignore files
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|bower_components\|node_modules\|data\|log\|tmp$',
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|bower_components\|node_modules\|data\|log\|tmp$|\build',
   \ 'file': '\.exe$\|\.so$\|\.dat$'
   \ }
 
@@ -179,4 +183,6 @@ map <Leader>n :NERDTreeToggle<CR>
 
 noremap P "0P
 
+" Control P
+let g:ctrlp_working_path_mode = 0
 
