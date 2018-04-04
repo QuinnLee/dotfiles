@@ -28,6 +28,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'https://github.com/shmargum/vim-sass-colors.git'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 
@@ -173,3 +174,10 @@ noremap P "0P
 " Control P
 let g:ctrlp_working_path_mode = 0
 
+let g:ale_linters = {
+\'python': ['pycodestyle'],
+\'jsx': ['stylelint', 'eslint'],
+\'c': ['clangtidy']
+\}
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
