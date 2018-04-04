@@ -44,6 +44,7 @@ if [ -e "$HOME/.hitch" ]; then
 fi
 
 # docker-related
+eval $(docker-machine env -u)
 if [ -e "$HOME/.dockerrc" ]; then
   source "$HOME/.dockerrc"
 fi

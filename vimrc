@@ -103,11 +103,6 @@ hi LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=Dark
 " Ignore files
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.ds_store,*/vendor,*/public,*/node_modules,*/bower_components
 
-"Control P ignore files
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|bower_components\|node_modules\|data\|log\|tmp$|\build',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -172,6 +167,11 @@ map <Leader>n :NERDTreeToggle<CR>
 noremap P "0P
 
 " Control P
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|bower_components\|node_modules\|data\|log\|tmp$|\build',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
 let g:ctrlp_working_path_mode = 0
 
 let g:ale_linters = {
