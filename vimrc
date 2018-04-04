@@ -1,45 +1,33 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-
 " ---------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin('~/.vim/bundle')
+call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'rizzatti/dash.vim'
-Plugin 'digitaltoad/vim-jade'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-cucumber'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-haml'
 Plugin 'mileszs/ack.vim'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'elzr/vim-json'
 Plugin 'groenewege/vim-less'
-Plugin 'nono/vim-handlebars'
-Plugin 'sjl/gundo.vim'
 Plugin 'sentientmachine/Pretty-Vim-Python'
 Plugin 'pangloss/vim-javascript'
 Plugin 'duskhacker/sweet-rspec-vim'
-Plugin 'heartsentwined/vim-emblem'
 Plugin 'sukima/xmledit'
 Plugin 'isRuslan/vim-es6'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'maxmellon/vim-jsx-pretty'
-
-call vundle#end()
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'https://github.com/shmargum/vim-sass-colors.git'
 
 call vundle#end()
 
@@ -73,7 +61,6 @@ set so=999
 
 " yank to clipboard
 map <Leader>y :w !pbcopy<CR><CR>
-
 
 autocmd FileChangedShell * echo "File changed, press F9 to reload."
 
@@ -145,7 +132,6 @@ set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
 
-
 " ----------------------------
 " File mutations
 
@@ -177,6 +163,7 @@ set complete=.,w,t
 " File types
 au BufRead,BufNewFile Vagrantfile,Berksfile,Gemfile,Hanfile setfiletype ruby
 au BufNewFile,BufRead,BufReadPost *.jade.html set filetype=jade
+au BufRead,BufNewFile *.scss set filetype=scss.css
 
 " Key Bindings
 map <Leader>n :NERDTreeToggle<CR>
