@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="muse"
+ZSH_THEME="lukerandall"
 source $ZSH/oh-my-zsh.sh
-plugins=(git osx rails ruby rbenv python brew npm pip vi-mode vagrant python3)
+plugins=(git osx python brew npm pip vi-mode vagrant python3 docker docker-compose kubectl)
 
 # Assure that the .rbenv -related have higher precedence (i.e. when using tmux)
 # then de-dup PATH variable.
@@ -28,7 +28,7 @@ autoload -U compinit
 compinit
 
 # use vim as an editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # color support for less/more
 export LESS="--ignore-case --quiet --chop-long-lines --quit-if-one-screen --no-init --raw-control-chars"
@@ -36,17 +36,6 @@ export LESS="--ignore-case --quiet --chop-long-lines --quit-if-one-screen --no-i
 # aliases
 if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
-fi
-
-# hitch for programming with pairs
-if [ -e "$HOME/.hitch" ]; then
-  source "$HOME/.hitch"
-fi
-
-# docker-related
-eval $(docker-machine env -u)
-if [ -e "$HOME/.dockerrc" ]; then
-  source "$HOME/.dockerrc"
 fi
 
 # awesome cd movements from zshkit
@@ -79,3 +68,16 @@ set -o vi
 # prompt
 PROMPT='%{$fg_bold[red]%}➜ %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+source $HOME/.cargo/env
+
+# pnpm
+export PNPM_HOME="/Users/pancakes/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+export PATH="$HOME/.fuelup/bin:$PATH"
+
+eval "$(rbenv init - zsh)"
