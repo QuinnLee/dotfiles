@@ -15,12 +15,3 @@ cask "slack"
 cask "sublime-text3"
 EOF
 
-if [ ! -f "$HOME/.gemrc" ]; then
-  echo "gem: --no-document" > "$HOME/.gemrc"
-fi
-
-if [ ! -f "$HOME/.rbenv/default-gems" ]; then
-  echo "bundler" > "$HOME/.rbenv/default-gems"
-fi
-
-curl -fsS https://raw.githubusercontent.com/grantovich/homebrew-notifier/master/install.sh | sh
