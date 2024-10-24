@@ -73,7 +73,6 @@ export PNPM_HOME="/Users/pancakes/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
-
 export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 export NVM_DIR=~/.nvm

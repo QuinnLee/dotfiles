@@ -1,15 +1,4 @@
 #!/usr/bin/env bash
-#
-# setup.sh:  run the workstation setup
-#
-# Arguments:
-#   - a list of components to install, see scripts/opt-in/ for valid options
-#
-# Environment variables:
-#   - SKIP_ANALYTICS:  Set this to 1 to not send usage data to our Google Analytics account
-#
-
-# Fail immediately if any errors occur
 set -e
 
 echo "Caching password..."
@@ -26,8 +15,34 @@ else
     export HOMEBREW_NO_ANALYTICS=1
 fi
 
+echo "Symlinking dot files"
+echo
+echo
+for file in files/*; do
+  target="$HOME/.$file"
+  base_file=$(basename "$file")
+
+  # Create a symlink in the home directory with a dot prefix
+  if [ -e "$target" ]; then
+    if [ ! -L "$target" ]; then
+      echo "WARNING: $target exists but is not a symlink."
+    fi
+  else
+     if [ -f "$file" ]; then
+      ln -sf $PWD"/$file" "$HOME/.$base_file"
+      echo "Symlinked $file to $HOME/.$base_file"
+    else
+      echo "$file is not a regular file, skipping."
+    fi
+  fi
+done
+echo
+echo
+
 # Note: Homebrew needs to be set up first
 source ${MY_DIR}/scripts/homebrew.sh
 source ${MY_DIR}/scripts/homebrew_install.sh
+source ${MY_DIR}/scripts/configure-osx.sh
 
+bash git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 
