@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="lukerandall"
 source $ZSH/oh-my-zsh.sh
-plugins=(git osx python brew npm pip vi-mode vagrant python3 docker docker-compose kubectl)
+plugins=(git python brew npm pip vi-mode vagrant docker docker-compose kubectl)
 
 # Assure that the .rbenv -related have higher precedence (i.e. when using tmux)
 # then de-dup PATH variable.
@@ -16,12 +16,6 @@ if [[ -d $PYENV_ROOT ]];then
     eval "$(pyenv virtualenv-init -)"
 fi
 
-eval "$(rbenv init -)"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/npm/bin:$PATH
 
 autoload -U compinit
@@ -78,6 +72,22 @@ source $HOME/.cargo/env
 export PNPM_HOME="/Users/pancakes/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-export PATH="$HOME/.fuelup/bin:$PATH"
 
-eval "$(rbenv init - zsh)"
+
+export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+FPATH=~/.rbenv/completions:"$FPATH"
+autoload -U compinit
+compinit
+
+# Added by `rbenv init` on Wed Oct 23 21:45:20 PDT 2024
+eval "$(rbenv init - --no-rehash zsh)"
+
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias gitx='gitx --all'
+alias vi='vim'
+alias grup='git remote update'
+alias pyserve='python -m SimpleHTTPServer 8080'

@@ -1,6 +1,8 @@
 [user]
 name = Quinn Lee
 email = leekeunhwi@gmail.com
+[push]
+  default = simple
 [alias]
 st = status -sb
 br = branch
@@ -40,3 +42,4 @@ remote = green
 ui = auto
 [merge]
 	tool = meld
+
