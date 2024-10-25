@@ -2,7 +2,7 @@
 name = Quinn Lee
 email = leekeunhwi@gmail.com
 [push]
-  default = simple
+default = simple
 [alias]
 st = status -sb
 br = branch
