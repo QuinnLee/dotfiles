@@ -43,3 +43,5 @@ ui = auto
 [merge]
 	tool = meld
 
+[init]
+	defaultBranch = main
